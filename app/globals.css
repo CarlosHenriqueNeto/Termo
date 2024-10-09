@@ -1,27 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Estilos existentes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.container {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #000;
+  color: #0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Permite que as linhas fiquem uma abaixo da outra */
+  height: 100vh;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.term-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre as linhas de inputs */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.row {
+  display: flex;
+  gap: 10px; /* Espaço entre os inputs na mesma linha */
 }
+
+.letter-input {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  color: #0f0;
+  border: 2px solid #0f0;
+  text-align: center;
+  font-size: 24px;
+  outline: none;
+}
+
+.letter-input:focus {
+  border-color: #fff;
+}
+
+/* Botão invisível */
+.invisible-button {
+  opacity: 0;   /* Torna o botão invisível */
+  position: absolute; /* Remove do fluxo normal da página */
+  pointer-events: none; /* Evita que o botão intercepte cliques */
+}
+.letter-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  margin: 5px;
+}
+
+.correct {
+  background-color: lightgreen;
+  color: green;
+  border: 2px solid green;
+}
+
+.incorrect {
+  background-color: lightcoral;
+  color: red;
+  border: 2px solid red;
+}
+
+.invisible-button {
+  display: none; /* Botão invisível para envio */
+}
+
+.big-green-text {
+  color: #32CD32; /* Cor verde (LimeGreen) */
+  font-size: 48px; /* Tamanho grande do texto */
+  font-weight: bold; /* Texto em negrito para destaque */
+  font-family: 'Arial', sans-serif; /* Fonte legível e limpa */
+  text-align: center; /* Centraliza o texto */
+  letter-spacing: 2px; /* Aumenta o espaçamento entre as letras */
+  margin: 20px 0; /* Margem para espaçamento vertical */
+  line-height: 1.5; /* Altura da linha para melhor legibilidade */
+}
+
